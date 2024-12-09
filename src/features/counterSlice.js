@@ -1,15 +1,18 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
+// Post Action
+export const  postUserApi = createAsyncThunk("postUserApi",async (formdata)=>{
 
+})
 
-// const initialState = { value: 20, array:[] };
 
 
 export const counterSlice = createSlice({
     name: "counter",
     initialState: {
-        value: 20,
-        array: []
+       users : [],
+       loading : false,
+       error : null
     },
 
     reducers: {}
