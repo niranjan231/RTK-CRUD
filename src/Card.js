@@ -1,7 +1,8 @@
 import "./App.css";
-import { FEtchApi } from "./API/FetchApi";
+import { FetchApi } from "./API/FetchApi";
 import { useEffect, useState } from "react";
 import { deleteApi } from "./API/DeleteApi";
+import { updateApi } from "./API/UpdateApi";
 
 
 
@@ -9,7 +10,7 @@ import { deleteApi } from "./API/DeleteApi";
 const Card = () => {
     const [data, setdata] = useState([])
     useEffect(() => {
-        FEtchApi()
+        FetchApi()
             .then(res => {
                 console.log(res.data)
                 setdata(res.data)
@@ -36,6 +37,9 @@ const Card = () => {
 
 
 
+    // Update Api
+
+
 
     return (
         <div className="card-1">
@@ -46,6 +50,7 @@ const Card = () => {
                         <p class="card-text">{item.body}</p>
                         <p class="card-text">{item.catchPhrase}</p>
                         <a onClick={() => handleDeleteCard(item.id)} href="#" class="btn btn-primary">Delete</a>
+                        <a  href="#" class="btn btn-primary">Edit</a>
                     </div>
                 </div>
             })
